@@ -18,7 +18,15 @@ model_list:
       supports_parallel_function_calling: true
       supports_streaming: true
       supports_chat: true
-
+  - model_name: mixtral-8x7b
+    litellm_params:
+      model: openrouter/mistralai/mixtral-8x7b-instruct
+      supports_function_calling: true
+      supports_tool_choice: true
+      supports_parallel_function_calling: true
+      supports_streaming: true
+      supports_chat: true
+      
 # This section sets general settings, like your API keys.
 litellm_settings:
   # Sets the OpenRouter API key from an environment variable

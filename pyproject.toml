@@ -1,7 +1,7 @@
 [project]
 name = "oai2ollama"
 version = "1.0.7"
-authors = [{ name = "Muspi Merol", email = "me@promplate.dev" }, { name = "Bas Steins" }]
+authors = [{ name = "Muspi Merol", email = "me@promplate.dev" }, { name = "Bas Steins" }, {name = "Jordan Miller"}]
 requires-python = ">=3.12"
 readme = "README.md"
 dependencies = [
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.urls]
-repository = "https://github.com/bascodes/copilot-ollama"
+repository = "https://github.com/jm6271/copilot-ollama-windows"
 
 [project.scripts]
 oai2ollama = "oai2ollama:start"

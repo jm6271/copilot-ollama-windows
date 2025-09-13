@@ -5,7 +5,7 @@
 **Use GitHub Copilot with OpenRouter models in VSCode Agent Mode on Windows**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![uv](https://img.shields.io/badge/uv-latest-green.svg)](https://docs.astral.sh/uv/)
 
 [Quick Start](#-quick-start) • [Configuration](#-configuration) • [How It Works](#-how-it-works) • [Contributing](#-contributing)
