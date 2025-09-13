@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.12"
 
 [[package]]
@@ -253,6 +253,35 @@ sdist = { url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335, upload-time = "2022-10-25T02:36:20.889Z" },
 ]
+
+[[package]]
+name = "copilot-ollama-windows"
+version = "1.0.7"
+source = { editable = "." }
+dependencies = [
+    { name = "fastapi" },
+    { name = "httpx", extra = ["http2"] },
+    { name = "litellm", extra = ["proxy"] },
+    { name = "pydantic-settings" },
+    { name = "uvicorn-hmr" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.115.14,<0.117.0" },
+    { name = "httpx", extras = ["http2"], specifier = "~=0.28.1" },
+    { name = "litellm", extras = ["proxy"], specifier = ">=1.74.3" },
+    { name = "pydantic-settings", specifier = "~=2.10.1" },
+    { name = "uvicorn-hmr", specifier = "~=0.0.8.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ruff", specifier = "~=0.12.2" }]
 
 [[package]]
 name = "cryptography"
@@ -887,35 +916,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/f2/40/b68001cba8188dd267590a111f9661b6256debc327137667e832bf5d66e8/multidict-6.6.3-cp313-cp313t-win_arm64.whl", hash = "sha256:ce8b7693da41a3c4fde5871c738a81490cea5496c671d74374c8ab889e1834fb", size = 45254, upload-time = "2025-06-30T15:53:12.421Z" },
     { url = "https://files.pythonhosted.org/packages/d8/30/9aec301e9772b098c1f5c0ca0279237c9766d94b97802e9888010c64b0ed/multidict-6.6.3-py3-none-any.whl", hash = "sha256:8db10f29c7541fc5da4defd8cd697e1ca429db743fa716325f236079b96f775a", size = 12313, upload-time = "2025-06-30T15:53:45.437Z" },
 ]
-
-[[package]]
-name = "oai2ollama"
-version = "1.0.7"
-source = { editable = "." }
-dependencies = [
-    { name = "fastapi" },
-    { name = "httpx", extra = ["http2"] },
-    { name = "litellm", extra = ["proxy"] },
-    { name = "pydantic-settings" },
-    { name = "uvicorn-hmr" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.115.14,<0.117.0" },
-    { name = "httpx", extras = ["http2"], specifier = "~=0.28.1" },
-    { name = "litellm", extras = ["proxy"], specifier = ">=1.74.3" },
-    { name = "pydantic-settings", specifier = "~=2.10.1" },
-    { name = "uvicorn-hmr", specifier = "~=0.0.8.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [{ name = "ruff", specifier = "~=0.12.2" }]
 
 [[package]]
 name = "oauthlib"

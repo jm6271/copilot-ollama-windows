@@ -1,5 +1,5 @@
 [project]
-name = "oai2ollama"
+name = "copilot-ollama-windows"
 version = "1.0.7"
 authors = [{ name = "Muspi Merol", email = "me@promplate.dev" }, { name = "Bas Steins" }, {name = "Jordan Miller"}]
 requires-python = ">=3.12"
@@ -17,6 +17,7 @@ repository = "https://github.com/jm6271/copilot-ollama-windows"
 
 [project.scripts]
 oai2ollama = "oai2ollama:start"
+copilot-ollama-windows = "copilot_ollama_windows.start:run"
 
 [build-system]
 requires = ["uv_build~=0.7.19"]
@@ -24,6 +25,10 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-root = ""
+packages = [
+    "copilot_ollama_windows",
+    "oai2ollama",
+]
 
 [tool.m.aliases]
 dev = "uvicorn-hmr oai2ollama:app --port 11434"
