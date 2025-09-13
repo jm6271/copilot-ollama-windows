@@ -3,12 +3,6 @@ param(
     [string]$ConfigFile = "config.yaml"  # Default to config.yaml if no argument provided
 )
 
-# Check if uv is installed
-if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
-    Write-Host "uv is not installed. Please install it first."
-    exit 1
-}
-
 # Check if the OPENROUTER_API_KEY environment variable is set
 if (-not $env:OPENROUTER_API_KEY) {
     Write-Host "OPENROUTER_API_KEY is not set. Please set it before running this script."
@@ -22,12 +16,12 @@ if (-not (Test-Path $ConfigFile)) {
 }
 
 # Start litellm
-$litellmProcess = Start-Process -NoNewWindow -FilePath "uv" -ArgumentList "run", "litellm", "--config", $ConfigFile -PassThru
+$litellmProcess = Start-Process -NoNewWindow -FilePath "litellm" -ArgumentList "--config", $ConfigFile -PassThru
 $LITELLM_PID = $litellmProcess.Id
 Write-Host "Started litellm with PID $LITELLM_PID"
 
 # Start oai2ollama
-$oai2ollamaProcess = Start-Process -NoNewWindow -FilePath "uv" -ArgumentList "run", "oai2ollama", "--api-key", "any", "--base-url", "http://localhost:4000" -PassThru
+$oai2ollamaProcess = Start-Process -NoNewWindow -FilePath "oai2ollama" -ArgumentList "--api-key", "any", "--base-url", "http://localhost:4000" -PassThru
 $OAI2OLLAMA_PID = $oai2ollamaProcess.Id
 Write-Host "Started oai2ollama with PID $OAI2OLLAMA_PID"
 
