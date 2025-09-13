@@ -262,6 +262,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "httpx", extra = ["http2"] },
     { name = "litellm", extra = ["proxy"] },
+    { name = "oai2ollama" },
     { name = "pydantic-settings" },
     { name = "uvicorn-hmr" },
 ]
@@ -276,6 +277,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.115.14,<0.117.0" },
     { name = "httpx", extras = ["http2"], specifier = "~=0.28.1" },
     { name = "litellm", extras = ["proxy"], specifier = ">=1.74.3" },
+    { name = "oai2ollama", specifier = ">=1.2.6" },
     { name = "pydantic-settings", specifier = "~=2.10.1" },
     { name = "uvicorn-hmr", specifier = "~=0.0.8.0" },
 ]
@@ -328,6 +330,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b5/4a/263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829/dnspython-2.7.0.tar.gz", hash = "sha256:ce9c432eda0dc91cf618a5cedf1a4e142651196bbcd2c80e89ed5a907e5cfaf1", size = 345197, upload-time = "2024-10-05T20:14:59.362Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/68/1b/e0a87d256e40e8c888847551b20a017a6b98139178505dc7ffb96f04e954/dnspython-2.7.0-py3-none-any.whl", hash = "sha256:b4c34b7d10b51bcc3a5071e7b8dee77939f1e878477eeecc965e9835f63c6c86", size = 313632, upload-time = "2024-10-05T20:14:57.687Z" },
+]
+
+[[package]]
+name = "dotenv-pth"
+version = "1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "python-dotenv" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/89/b2/65ccdc0480f7ac41f323a0496e5844c9a1b52a04d69c8558cf4cf3b72c66/dotenv_pth-1.0.tar.gz", hash = "sha256:35a7db8e625df2821420e7b5cb398850fb104f24dc003e612c7401163eec6999", size = 1079, upload-time = "2025-07-17T11:26:50.643Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/68/fe/6e5dcd537a3b97a1898eb537c1f269b395c0a4381e55275145972dd1d110/dotenv_pth-1.0-py2.py3-none-any.whl", hash = "sha256:aadc2610bad140ab861256b27197a3f54b3f23b5ae6871d1695174c4f7401e80", size = 1779, upload-time = "2025-07-17T11:26:49.408Z" },
 ]
 
 [[package]]
@@ -915,6 +929,22 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/b6/d6/a9d2c808f2c489ad199723197419207ecbfbc1776f6e155e1ecea9c883aa/multidict-6.6.3-cp313-cp313t-win_amd64.whl", hash = "sha256:9f97e181f344a0ef3881b573d31de8542cc0dbc559ec68c8f8b5ce2c2e91646d", size = 53011, upload-time = "2025-06-30T15:53:11.038Z" },
     { url = "https://files.pythonhosted.org/packages/f2/40/b68001cba8188dd267590a111f9661b6256debc327137667e832bf5d66e8/multidict-6.6.3-cp313-cp313t-win_arm64.whl", hash = "sha256:ce8b7693da41a3c4fde5871c738a81490cea5496c671d74374c8ab889e1834fb", size = 45254, upload-time = "2025-06-30T15:53:12.421Z" },
     { url = "https://files.pythonhosted.org/packages/d8/30/9aec301e9772b098c1f5c0ca0279237c9766d94b97802e9888010c64b0ed/multidict-6.6.3-py3-none-any.whl", hash = "sha256:8db10f29c7541fc5da4defd8cd697e1ca429db743fa716325f236079b96f775a", size = 12313, upload-time = "2025-06-30T15:53:45.437Z" },
+]
+
+[[package]]
+name = "oai2ollama"
+version = "1.2.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dotenv-pth" },
+    { name = "fastapi" },
+    { name = "httpx", extra = ["http2"] },
+    { name = "pydantic-settings" },
+    { name = "uvicorn-hmr" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d9/96/ee34829d813eb28365048cb6a373f13801e37172a8867b1544d67d418ece/oai2ollama-1.2.6.tar.gz", hash = "sha256:e8cd4a1e33fc69ab24f25f25da99efe141a37cc8d6e910d52cba68e0ead7e8a6", size = 3677, upload-time = "2025-08-26T02:46:55.757Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d8/5b/38eb3bc4d4a8274e5869909f7112bd8da23f999acddcfa039abbcd93281d/oai2ollama-1.2.6-py3-none-any.whl", hash = "sha256:3accf585cec31a9cd07ce27b4061c3737867f00e3492dd4341da6d56a1347f61", size = 4963, upload-time = "2025-08-26T02:46:54.235Z" },
 ]
 
 [[package]]
@@ -1625,7 +1655,7 @@ wheels = [
 
 [[package]]
 name = "uvicorn-hmr"
-version = "0.0.8.5"
+version = "0.0.8.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "dowhen" },
@@ -1633,9 +1663,9 @@ dependencies = [
     { name = "typer-slim" },
     { name = "uvicorn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/73/cd/189a979d697d560ed5df82e54b8e736338874f0a38b3461efdf30e8981bb/uvicorn_hmr-0.0.8.5.tar.gz", hash = "sha256:a0ed68dc8628e1a7914dc9ed17ee8bfb33bf8584618de1e37b601f90d3abf491", size = 5204, upload-time = "2025-07-14T23:58:48.621Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3f/08/6bad7591d1be31d8dec347ca6927c7e654fa73d68ad43d97848e93346e77/uvicorn_hmr-0.0.8.6.tar.gz", hash = "sha256:742dbbbda91aa2fd389733ba58ceaf92801003117adc9991cc6e652dda94aace", size = 5193, upload-time = "2025-08-08T05:37:17.439Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/54/5a/4819ccf3090d3f437025f97416e851c312d6c0e341a0d97f931ce3100acb/uvicorn_hmr-0.0.8.5-py3-none-any.whl", hash = "sha256:e7f58c6e67f935d9a01c076376d9c988c3a67bd3de18dbb6d4046f254a16958f", size = 5984, upload-time = "2025-07-14T23:58:47.559Z" },
+    { url = "https://files.pythonhosted.org/packages/f5/98/02bfd3aa3796ee6c3b6577b1a042e883ebfecd4b8b68a8c9d5049a1d947a/uvicorn_hmr-0.0.8.6-py3-none-any.whl", hash = "sha256:3310f53f5e4c72f6051011d385215e8d55d68cf78a709f525fff5a0817ff3a55", size = 5976, upload-time = "2025-08-08T05:37:16.73Z" },
 ]
 
 [[package]]
