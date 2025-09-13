@@ -42,37 +42,32 @@ This prevents using powerful models like Claude, GPT-4, and others through OpenR
 
 ### Installation & Setup
 
-1. **Install the package**
-   ```
-   uv tool install copilot-ollama-windows
-   ```
-
-2. **Set your OpenRouter API key**
+1. **Set your OpenRouter API key**
    ```powershell
    [System.Environment]::SetEnvironmentVariable('OPENROUTER_API_KEY','your-openrouter-api-key-here', 'User')
    ```
 
-3. **Create a config file**
+2. **Create a config file**
    Checkout `config.yaml` as an example.
 
-4. **Start the proxy servers**
+3. **Start `copilot-ollama-windows`**
    ```
-   copilot-ollama-windows your-config-file.yaml
+   uvx copilot-ollama-windows your-config-file.yaml
    ```
 
-5. **Configure VSCode**
+4. **Configure VSCode**
    - Open VSCode settings
    - Set `github.copilot.chat.byok.ollamaEndpoint` to `http://localhost:11434`
    - Click "Manage Models" → Select "Ollama"
 
-6. **Start coding!** 🎉
+5. **Start coding!** 🎉
    Your OpenRouter models are now available in Copilot Agent Mode.
 
 ## ⚙️ Configuration
 
 ### Adding Models
 
-Edit `config.yaml` to add or modify available models:
+Edit your `config.yaml` to add or modify available models:
 
 ```yaml
 # This section defines the models that your local proxy will advertise
