@@ -1,3 +1,8 @@
+# Define parameter for config file path
+param(
+    [string]$ConfigFile = "config.yaml"  # Default to config.yaml if no argument provided
+)
+
 # Check if uv is installed
 if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
     Write-Host "uv is not installed. Please install it first."
@@ -10,8 +15,14 @@ if (-not $env:OPENROUTER_API_KEY) {
     exit 1
 }
 
+# Check if config file exists
+if (-not (Test-Path $ConfigFile)) {
+    Write-Host "Config file '$ConfigFile' not found."
+    exit 1
+}
+
 # Start litellm
-$litellmProcess = Start-Process -NoNewWindow -FilePath "uv" -ArgumentList "run", "litellm", "--config", "config.yaml" -PassThru
+$litellmProcess = Start-Process -NoNewWindow -FilePath "uv" -ArgumentList "run", "litellm", "--config", $ConfigFile -PassThru
 $LITELLM_PID = $litellmProcess.Id
 Write-Host "Started litellm with PID $LITELLM_PID"
 
