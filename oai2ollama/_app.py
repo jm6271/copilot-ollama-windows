@@ -27,6 +27,12 @@ async def show_model():
         "capabilities": ["chat", "tools", "stop", "reasoning"],
     }
 
+@app.get("/api/version")
+async def version():
+    return {
+        "version": "0.11.10"
+    }
+
 
 @app.post("/v1/chat/completions")
 async def chat_completions(request: Request):

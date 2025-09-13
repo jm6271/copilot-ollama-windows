@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🤖 Copilot-Ollama
+# 🤖 Copilot-Ollama-Windows
 
-**Use GitHub Copilot with OpenRouter models in VSCode Agent Mode**
+**Use GitHub Copilot with OpenRouter models in VSCode Agent Mode on Windows**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -13,6 +13,10 @@
 </div>
 
 ---
+
+## Note
+
+This repo was forked from [bascodes/copilot-ollama](https://github.com/bascodes/copilot-ollama)
 
 ## 🎯 Problem
 
@@ -41,19 +45,19 @@ This prevents using powerful models like Claude, GPT-4, and others through OpenR
 ### Installation & Setup
 
 1. **Clone and navigate to the project**
-   ```bash
-   git clone https://github.com/bascodes/copilot-ollama.git
-   cd copilot-ollama
+   ```powershell
+   git clone https://github.com/jm6271/copilot-ollama-windows.git
+   cd copilot-ollama-windows
    ```
 
 2. **Set your OpenRouter API key**
-   ```bash
-   export OPENROUTER_API_KEY=your_openrouter_api_key_here
+   ```powershell
+   [System.Environment]::SetEnvironmentVariable('OPENROUTER_API_KEY','your-openrouter-api-key-here', 'User')
    ```
 
 3. **Start the proxy servers**
-   ```bash
-   ./run.sh
+   ```powershell
+   ./run.ps1
    ```
 
 4. **Configure VSCode**
@@ -124,17 +128,17 @@ We welcome contributions! Here's how you can help:
 
 ### Development Setup
 
-```bash
+```powershell
 # Clone the repo
-git clone https://github.com/bascodes/copilot-ollama.git
+git clone https://github.com/jm6271/copilot-ollama-windows.git
 cd copilot-ollama
 
 # Install dependencies
 uv sync
 
 # Make your changes and test
-export OPENROUTER_API_KEY=your_key
-./run.sh
+[System.Environment]::SetEnvironmentVariable('OPENROUTER_API_KEY','your-openrouter-api-key-here', 'User')
+./run.ps1
 ```
 
 ## 📝 License
@@ -146,6 +150,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [LiteLLM](https://docs.litellm.ai/) for the excellent proxy framework
 - [oai2ollama](https://github.com/CNSeniorious000/oai2ollama) for Ollama compatibility
 - [OpenRouter](https://openrouter.ai) for model access
+- [copilot-ollama](https://github.com/bascodes/copilot-ollama) for the original project
 - The VSCode and GitHub Copilot teams
 
 ---
@@ -155,6 +160,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **⭐ Star this repo if it helped you unlock Copilot Agent Mode with your favorite models!**
 
 </div>
-
-
-
