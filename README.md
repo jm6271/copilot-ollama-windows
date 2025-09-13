@@ -37,17 +37,14 @@ This prevents using powerful models like Claude, GPT-4, and others through OpenR
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- [uv](https://docs.astral.sh/uv/) package manager
 - OpenRouter API key ([get one here](https://openrouter.ai/keys))
 - VSCode with GitHub Copilot extension
 
 ### Installation & Setup
 
-1. **Clone and navigate to the project**
-   ```powershell
-   git clone https://github.com/jm6271/copilot-ollama-windows.git
-   cd copilot-ollama-windows
+1. **Install the package**
+   ```
+   uv tool install copilot-ollama-windows
    ```
 
 2. **Set your OpenRouter API key**
@@ -55,17 +52,20 @@ This prevents using powerful models like Claude, GPT-4, and others through OpenR
    [System.Environment]::SetEnvironmentVariable('OPENROUTER_API_KEY','your-openrouter-api-key-here', 'User')
    ```
 
-3. **Start the proxy servers**
-   ```powershell
-   ./run.ps1
+3. **Create a config file**
+   Checkout `config.yaml` as an example.
+
+4. **Start the proxy servers**
+   ```
+   copilot-ollama-windows your-config-file.yaml
    ```
 
-4. **Configure VSCode**
+5. **Configure VSCode**
    - Open VSCode settings
    - Set `github.copilot.chat.byok.ollamaEndpoint` to `http://localhost:11434`
    - Click "Manage Models" → Select "Ollama"
 
-5. **Start coding!** 🎉
+6. **Start coding!** 🎉
    Your OpenRouter models are now available in Copilot Agent Mode.
 
 ## ⚙️ Configuration
@@ -131,14 +131,14 @@ We welcome contributions! Here's how you can help:
 ```powershell
 # Clone the repo
 git clone https://github.com/jm6271/copilot-ollama-windows.git
-cd copilot-ollama
+cd copilot-ollama-windows
 
 # Install dependencies
 uv sync
 
 # Make your changes and test
 [System.Environment]::SetEnvironmentVariable('OPENROUTER_API_KEY','your-openrouter-api-key-here', 'User')
-./run.ps1
+uv run copilot-ollama-windows your-config-file.yaml
 ```
 
 ## 📝 License
