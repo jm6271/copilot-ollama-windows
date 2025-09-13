@@ -256,7 +256,7 @@ wheels = [
 
 [[package]]
 name = "copilot-ollama-windows"
-version = "1.0.7"
+version = "1.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi" },

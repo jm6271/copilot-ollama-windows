@@ -16,7 +16,7 @@ if (-not (Test-Path $ConfigFile)) {
 }
 
 # Start litellm
-$litellmProcess = Start-Process -NoNewWindow -FilePath "litellm" -ArgumentList "--config", $ConfigFile -PassThru
+$litellmProcess = Start-Process -NoNewWindow -FilePath "litellm" -ArgumentList "--config", "`"$ConfigFile`"" -PassThru
 $LITELLM_PID = $litellmProcess.Id
 Write-Host "Started litellm with PID $LITELLM_PID"
 
