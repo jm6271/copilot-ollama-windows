@@ -1,13 +1,14 @@
 [project]
 name = "copilot-ollama-windows"
-version = "1.0.0"
+version = "1.0.1"
+description = "Windows support for copilot-ollama"
 authors = [{name = "Jordan Miller"}, { name = "Bas Steins" }]
 requires-python = ">=3.12"
 readme = "README.md"
 dependencies = [
     "fastapi>=0.115.14,<0.117.0",
     "httpx[http2]~=0.28.1",
-    "litellm[proxy]>=1.74.3",
+    "litellm[proxy]>=1.77.1",
     "oai2ollama>=1.2.6",
     "pydantic-settings~=2.10.1",
     "uvicorn-hmr~=0.0.8.0",
