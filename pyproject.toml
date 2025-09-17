@@ -1,6 +1,6 @@
 [project]
 name = "copilot-ollama-windows"
-version = "1.0.1"
+version = "1.0.2"
 description = "Windows support for copilot-ollama"
 authors = [{name = "Jordan Miller"}, { name = "Bas Steins" }]
 requires-python = ">=3.12"
